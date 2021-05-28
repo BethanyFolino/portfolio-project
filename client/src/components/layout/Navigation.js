@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { logout } from "../../actions/auth";
 
-export const Navigation = () => {
+export const Navigation = ({ auth: { isAuthenticated }, logout }) => {
   return (
     <nav className="navbar bg-dark">
       <h1>
@@ -24,4 +27,13 @@ export const Navigation = () => {
   );
 };
 
-export default Navigation;
+Navigation.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps, { logout })(Navigation);
