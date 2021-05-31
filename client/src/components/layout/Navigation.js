@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
-export const Navigation = ({ auth: { isAuthenticated }, logout }) => {
+export const Navigation = ({ auth: logout }) => {
   return (
     <nav className="navbar bg-dark">
       <h1>
@@ -21,6 +21,21 @@ export const Navigation = ({ auth: { isAuthenticated }, logout }) => {
         </li>
         <li>
           <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+        <li>
+          <Link to="/profile">Profile</Link>
+        </li>
+        <li>
+          <Link to="/reviews">Reviews</Link>
+        </li>
+        <li>
+          <a onClick={logout} href="#!">
+            <i className="fas fa-sign-out-alt"></i>{" "}
+            <span className="hide-sm">Logout</span>
+          </a>
         </li>
       </ul>
     </nav>
