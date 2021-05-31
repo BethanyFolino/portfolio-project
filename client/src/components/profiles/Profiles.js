@@ -14,7 +14,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
       { loading ? <Spinner /> : <Fragment>
         <h1 className="large text-primary">Developers</h1>
         <p className="lead">
-          <i className="fab fa-connectdevelop"></i> Browse and connect with developers
+          <i className="fab fa-connectdevelop"></i> Browse and connect with other fans
         </p>
         <div className="profiles">
           {profiles.length > 0 ? (

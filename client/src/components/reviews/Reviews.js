@@ -6,7 +6,7 @@ import ReviewItem from "./ReviewItem";
 import ReviewForm from "./ReviewForm";
 import { getPosts } from "../../actions/post";
 
-const Reviews = ({ getPosts, post: { posts, loading } }) => {
+const Reviews = ({ getPosts, review: { reviews, loading } }) => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
@@ -15,14 +15,14 @@ const Reviews = ({ getPosts, post: { posts, loading } }) => {
     <Spinner /> 
   ) : (
     <Fragment>
-      <h1 className="large text-primary">Posts</h1>
+      <h1 className="large text-primary">Reviews</h1>
       <p className="lead">
         <i className="fas fa-user"></i> Welcome to the community
       </p>
       <ReviewForm />
-      <div className="posts">
-        {posts.map(post => (
-          <ReviewItem key={post._id} post={post} />
+      <div className="reviews">
+        {reviews.map(review => (
+          <ReviewItem key={review._id} review={review} />
         ))}
       </div>
     </Fragment>
