@@ -20,18 +20,18 @@ const Review = ({ getPost, review: {review, loading }, match }) => {
       <Link to="/posts" className="btn">
         Back to Posts
       </Link>
-      <ReviewItem post={post} showActions={false} />
-      <CommentForm postId={post._id} />
+      <ReviewItem post={review} showActions={false} />
+      <CommentForm postId={review._id} />
       <div className="comments">
-      {post.comments.map(comment => (
-        <CommentItem key={comment._id} comment={comment} postId={post._id} />
+      {review.comments.map(comment => (
+        <CommentItem key={comment._id} comment={comment} postId={review._id} />
       ))}
       </div>
     </Fragment>
   );
 };
 
-Post.propTypes = {
+Review.propTypes = {
   getPost: PropTypes.func.isRequired,
   review: PropTypes.object.isRequired
 };

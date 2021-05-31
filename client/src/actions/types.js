@@ -18,6 +18,6 @@ export const GET_REVIEW = "GET_REVIEW";
 export const POST_ERROR = "POST_ERROR";
 export const UPDATE_LIKES = "UPDATE_LIKES";
 export const DELETE_REVIEW = "DELETE_REVIEW";
-export const ADD_POST = "ADD_POST";
+export const ADD_REVIEW = "ADD_REVIEW";
 export const ADD_COMMENT = "ADD_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";

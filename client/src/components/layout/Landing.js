@@ -1,17 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-export const Landing = () => {
+export const Landing = ({ isAuthenticated }) => {
+    if (isAuthenticated) {
+      return <Redirect to="/dashboard" />;
+    }
+
     return (
         <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1 className="x-large"> Portfolio Project</h1>
+          <h1 className="x-large">Kenzie Flicks</h1>
           <p className="lead">
             {/* this needs to actually display the new lines  */}
-            Search for your favorite Movies and Games, share them
+            Search for your favorite movies and games, share them
             with your friends, leave a review, or simply check out
             information about your favorite characters !
           </p>
