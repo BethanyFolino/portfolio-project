@@ -13,6 +13,9 @@ const ReviewSchema = new Schema({
   name: {
     type: String,
   },
+  avatar: {
+    type: String,
+  },
   imdbID: {
     type: String,
     required: true,
@@ -37,6 +40,9 @@ const ReviewSchema = new Schema({
         required: true,
       },
       name: {
+        type: String,
+      },
+      avatar: {
         type: String,
       },
       date: {
