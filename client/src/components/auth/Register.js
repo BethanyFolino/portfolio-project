@@ -22,31 +22,13 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     const onSubmit = async (e) => {
         e.preventDefault();
         if (password !== password2) {
-            console.log('Passwords do not match', 'danger');
+            setAlert('Passwords do not match', 'danger');
         } else {
-            const newUser = {
-                name, 
-                email, 
-                password
-            }
-
-            try {
-                const config = {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-
-                const body = JSON.stringify(newUser)
-                //  we can go to /api/users instead of the
-                // back end site because of our proxy
-                const res = await axios.post('/api/users', body, config);
-                console.log(res.data)
-            } catch (err) {
-                console.error(err.response.data);
-            }
+            register({ name, email, password });
         }
-    };
+        
+      }
+    
 
     if (isAuthenticated) {
         return <Redirect to='/dashboard' />;
