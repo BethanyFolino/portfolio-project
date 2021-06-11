@@ -20,7 +20,10 @@ const Dashboard = ({
       <h1 className="large text-primary">Dashboard</h1>
       <p className="lead">
        <i className="fas fa-user"></i> Welcome {user && user.name}
+       {/* --TODO--
+          Center dashboard and welcome user */}
       </p>
+      <Link to='/movies-tab' className="btn btn-primary my-1">Enter Theatre</Link>
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
